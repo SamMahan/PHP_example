@@ -1,0 +1,25 @@
+h1 {
+    background-color: #7A021B;
+    color: white;
+    margin-top: 0 !important;
+    padding: 5px;
+}
+table{
+    border-collapse: collapse;
+    width: 50%;
+}
+td, th {
+    border: solid 2px #7A021B;
+    padding: 4px;
+}
+th {
+    background-color: #7A021B;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #e6f7ff;
+}
+.title{
+  margin-left:50%;
+  margin-right:50%;
+}
