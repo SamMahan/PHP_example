@@ -47,7 +47,7 @@ class Post {
     $stmt->execute();
 
     $err = $stmt->errorInfo();
-    if($err[0]!= null){
+    if($err[0]!= 0){
       echo Implode($err, "::");
       return false;
     }else{
@@ -67,7 +67,7 @@ class Post {
     $stmt -> execute();
 
     $err = $stmt->errorInfo();
-    if($err[0]!= null){
+    if($err[0]!= 0){
       echo Implode($err, "::");
       return false;
     }else{
@@ -91,7 +91,6 @@ class Post {
       return false;
     }else{
       while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        echo Implode($row, "::");
         $return[] = new Post($row);
       }
       return $return;
@@ -111,7 +110,7 @@ class Post {
     $stmt -> execute();
 
     $err = $stmt->errorInfo();
-    if($err[0]!= null){
+    if($err[0]!= 0){
       echo Implode($err, "::");
       return false;
     }else{
@@ -122,15 +121,14 @@ class Post {
     }
   }
   public function getUser(){
-    PostFactory::getPostUser($this->user_fk);
-    echo "post getuser hit";
+    return PostFactory::getPostUser($this->user_fk);
+
   }
 
   }
 
 class PostFactory{
   public static function getPostUser($UserId){
-    echo "factory hit;";
     return User::getUser($UserId);
 
   }

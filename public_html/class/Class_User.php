@@ -42,7 +42,7 @@ class User {
     }else{
       $return = $stmt->fetch(PDO::FETCH_ASSOC);
       $userdata = $return;
-      echo "-------->>".Implode($userdata, "::")."<<---------";
+
       return new User($userdata);
 
     }
@@ -60,12 +60,12 @@ class User {
     $stmt -> execute();
 
     $err = $stmt->errorInfo();
-    if($err[0]!= null){
+    if($err[0]!= 0){
       echo Implode($err, "::");
       return false;
     }else{
-      $return = $stmt-fetch(PDO::FETCH_ASSOC);
-      $userdata = $return [1];
+      $return = $stmt->fetch(PDO::FETCH_ASSOC);
+      $userdata = $return;
       return new User($userdata);
 
     }
@@ -74,7 +74,7 @@ class User {
   public static function create($data){
     global $pdo;
     $ldata = [];
-    $q = "INSERT INTO user VALUES(:nm, :em, :pas)";
+    $q = "INSERT INTO user (name, email, password) VALUES(:nm, :em, :pas)";
     $stmt = $pdo -> prepare($q);
     $stmt -> bindParam(":nm", $data["name"]);
     $stmt -> bindParam(":em", $data["email"]);
@@ -85,7 +85,7 @@ class User {
 
   $stmt ->execute();
   $err = $stmt ->errorInfo();
-  if($err[0]!= null){
+  if($err[0]!= 0){
     echo Implode($err, "::");
     return false;
   }else{

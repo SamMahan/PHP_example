@@ -38,10 +38,12 @@ define('SMARTY', SMARTY_ROOT . 'libs/Smarty.class.php');
 date_default_timezone_set('America/New_York');
 
 # Define the Smarty template/presentation framework.
-define("LIBS", '<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+define("LIBS", '
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>');
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
+<script src="'.WEB_URL.'/js/post.js"></script>');
 /* ------------------------------------------------------------------------------------
  * This application uses Smarty, a template/presentation framework which can be
  * downloaded from www.Smarty.net
@@ -53,10 +55,10 @@ $smarty -> setCompileDir(SMARTY_ROOT . 'templates_c');
 $smarty -> setCacheDir(SMARTY_ROOT . 'cache');
 $smarty -> setConfigDir(SMARTY_ROOT . 'configs');
 $smarty -> assign('WEB_URL', WEB_URL);
-
+$smarty -> error_reporting = E_ERROR;
 require_once "dbconfig.inc.php";
 
-require_once "../public_html/class/Class_Post.php";
-require_once "../public_html/class/Class_User.php";
+require_once WEB_PATH."class\Class_Post.php";
+require_once WEB_PATH."\class\Class_User.php";
 
-require_once "../public_html/functions/functions.php";
+require_once WEB_PATH."functions/functions.php";

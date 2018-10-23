@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Course List</title>
-    <link rel="stylesheet" href="{$WEB_URL}css/bootstrap.css" />
-    <link rel="stylesheet" href="{$WEB_URL}css/bootstrap-theme.min.css" />
+    <!--<link rel="stylesheet" href="{$WEB_URL}css/bootstrap.css" />-
+    <link rel="stylesheet" href="{$WEB_URL}css/bootstrap-theme.min.css" />-->
     <link rel="stylesheet" href="{$WEB_URL}css/style.css" />
-
+<div class = "metadata" data-userId ="{$currUser->userId}"> </div>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -22,8 +22,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Login</a></li>
-                <li><a href="#about">Sign up</a></li>
+                <li class="active"><a href="#" data-toggle = "modal" data-target="#login-modal">Login</a></li>
+                <li><a href="#" data-toggle = "modal" data-target = "#register-modal">Sign up</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -31,9 +31,10 @@
 {if $currUser != false}
 
 <div class="container-fluid">
+  <div class = "row">
   <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12">
-    <h1> Welcome, {$currUser->name}!</h1>
-
+    <h2> Welcome, {$currUser->name}!</h2>
+  </div>
 </div>
 {/if}
 
@@ -62,25 +63,15 @@
           </div>
           {/foreach}
 
-        </div>
-
-                            <a class = "newUser" data-toggle="modal" data-target="gModal"> <button id="{**$course.Course_OID*}"> pick a student</button></a>
-                          <!--  <a href<i class = "fa fa-plus"> </i>-->
-
-
-
-        </div>
     </div>
 </div>
 
 <!-- Bootstrap core JavaScript ======================================================
      Placed at the end of the document so the pages load faster                   -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<!--<script src="{$WEB_URL}lib/Bootstrap/js/bootstrap.min.js"></script>
-<script src="{$WEB_URL}js/bootstrap.js"></script>-->
 {$smarty.const.LIBS}
-<script src="ajax.js"></script>
-{include file="modal.tpl"}
+
+
 </body>
+{include file="modal.tpl"}
 </html>
