@@ -66,14 +66,13 @@
         <h4 class="modal-title">post</h4>
       </div>
       <div class="modal-body">
-
           <form>
             <h3>Write something</h3>
-            <p> not anything personal. Planet earth has easy access to eevrything you type. Stay safe kids </p>
+            <p> No personal information. Planet earth has easy access to evrything you type. Stay safe kids! </p>
             <input type="text" id="content"><br>
           </form>
       <div class="modal-footer">
-        <button type = "button" class="btn btn-default" id = "makepost">register</button>
+        <button type = "button" class="btn btn-default" id = "makepost" >Post It!</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

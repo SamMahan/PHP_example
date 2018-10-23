@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2018-10-23 14:52:49
+<?php /* Smarty version Smarty-3.1.15, created on 2018-10-23 16:18:23
          compiled from "C:\MAMP\htdocs\PHP_example\public_html\templates\modal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3436629165adab47bce2dd3-47453788%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '206f0eb54ee406185b8d574e95bbab759d64e321' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\PHP_example\\public_html\\templates\\modal.tpl',
-      1 => 1540320453,
+      1 => 1540325525,
       2 => 'file',
     ),
   ),
@@ -68,6 +68,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   </form>
       <div class="modal-footer">
         <button type = "button" class="btn btn-default" id = "register">register</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<div id="post-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">post</h4>
+      </div>
+      <div class="modal-body">
+          <form>
+            <h3>Write something</h3>
+            <p> No personal information. Planet earth has easy access to evrything you type. Stay safe kids! </p>
+            <input type="text" id="content"><br>
+          </form>
+      <div class="modal-footer">
+        <button type = "button" class="btn btn-default" id = "makepost" >Post It!</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

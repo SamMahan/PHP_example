@@ -26,17 +26,17 @@ $(document).ready(function() {
   }); //ends click handler
 
   $("#makepost").click(function register() {
-    var userpassword = $("#lpassword").val();
-    var useremail = $("#email").val();
+    var content = $("#content").val();
+    var userFk = $("#metadata").data("userid");
+    alert(userFk);
     var data = {
-      password: userpassword,
-      email: useremail
+      content: content,
+      user_fk: userFk
     };
     data = JSON.stringify(data);
     $.ajax({
       type: "POST",
-
-      url: "./api/login.php",
+      url: "./api/makepost.php",
       data: "data=" + data,
       success: function(response, data) {
         if ((response.code = 200)) {

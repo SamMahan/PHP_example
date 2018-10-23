@@ -34,10 +34,7 @@ class Post {
     if(array_key_exists("post_fk", $Data)){
       $postFkInsert = $Data["post_fk"];
     }
-    $q = "INSERT INTO post VALUES(
-      content = :con,
-      post_fk = :pfk,
-      user_fk = :ufk)";
+    $q = "INSERT INTO post(content, post_fk, user_fk) VALUES(:con,:pfk,:ufk)";
     $stmt = $pdo->prepare($q);
 
     $stmt->bindParam(":con", $Data["content"]);

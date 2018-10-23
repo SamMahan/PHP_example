@@ -6,7 +6,9 @@
     <!--<link rel="stylesheet" href="{$WEB_URL}css/bootstrap.css" />-
     <link rel="stylesheet" href="{$WEB_URL}css/bootstrap-theme.min.css" />-->
     <link rel="stylesheet" href="{$WEB_URL}css/style.css" />
-<div class = "metadata" data-userId ="{$currUser->userId}"> </div>
+    {if $currUser}
+<div id = "metadata" data-userid ="{$currUser->user_id}" data-name="{$currUser->name}"> </div>
+{/if}
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -22,8 +24,13 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+              {if !$currUser}
                 <li class="active"><a href="#" data-toggle = "modal" data-target="#login-modal">Login</a></li>
                 <li><a href="#" data-toggle = "modal" data-target = "#register-modal">Sign up</a></li>
+              {/if}
+              {if $currUser}
+              <li class="active"><a href="#" data-toggle = "modal" data-target="#post-modal">make a post!</a></li>
+              {/if}
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -47,10 +54,10 @@
           <div class = "row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h4> {$opUser->name} </h4>
-            <div>
+            </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <p>{$val->content}</p>
-              <div>
+              </div>
               <hr/>
               <!-- makes new comment foreah post -->
               {foreach $val->getComments() as $key2 => $val2}
@@ -61,6 +68,8 @@
               {/if}
               {/foreach}
           </div>
+        </div>
+
           {/foreach}
 
     </div>
@@ -70,6 +79,12 @@
      Placed at the end of the document so the pages load faster                   -->
 
 {$smarty.const.LIBS}
+
+{if $currUser}
+
+
+
+{/if}
 
 
 </body>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2018-10-23 09:15:17
+<?php /* Smarty version Smarty-3.1.15, created on 2018-10-23 16:34:21
          compiled from "C:\MAMP\htdocs\PHP_example\public_html\templates\posts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8603258395bcbf1a2e54280-42882093%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f92febb521c6dc0e200c09bf182f0906e8d627f1' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\PHP_example\\public_html\\templates\\posts.tpl',
-      1 => 1540300514,
+      1 => 1540326858,
       2 => 'file',
     ),
   ),
@@ -39,8 +39,11 @@ css/bootstrap.css" />-
 css/bootstrap-theme.min.css" />-->
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['WEB_URL']->value;?>
 css/style.css" />
-<div class = "metadata" data-userId ="<?php echo $_smarty_tpl->tpl_vars['currUser']->value->userId;?>
+    <?php if ($_smarty_tpl->tpl_vars['currUser']->value) {?>
+<div id = "metadata" data-userid ="<?php echo $_smarty_tpl->tpl_vars['currUser']->value->user_id;?>
+" data-name="<?php echo $_smarty_tpl->tpl_vars['currUser']->value->name;?>
 "> </div>
+<?php }?>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -56,8 +59,13 @@ css/style.css" />
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+              <?php if (!$_smarty_tpl->tpl_vars['currUser']->value) {?>
                 <li class="active"><a href="#" data-toggle = "modal" data-target="#login-modal">Login</a></li>
                 <li><a href="#" data-toggle = "modal" data-target = "#register-modal">Sign up</a></li>
+              <?php }?>
+              <?php if ($_smarty_tpl->tpl_vars['currUser']->value) {?>
+              <li class="active"><a href="#" data-toggle = "modal" data-target="#post-modal">make a post!</a></li>
+              <?php }?>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -89,11 +97,11 @@ $_smarty_tpl->tpl_vars['val']->_loop = true;
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h4> <?php echo $_smarty_tpl->tpl_vars['opUser']->value->name;?>
  </h4>
-            <div>
+            </div>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <p><?php echo $_smarty_tpl->tpl_vars['val']->value->content;?>
 </p>
-              <div>
+              </div>
               <hr/>
               <!-- makes new comment foreah post -->
               <?php  $_smarty_tpl->tpl_vars['val2'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['val2']->_loop = false;
@@ -112,6 +120,8 @@ $_smarty_tpl->tpl_vars['val2']->_loop = true;
               <?php }?>
               <?php } ?>
           </div>
+        </div>
+
           <?php } ?>
 
     </div>
@@ -122,6 +132,12 @@ $_smarty_tpl->tpl_vars['val2']->_loop = true;
 
 <?php echo @constant('LIBS');?>
 
+
+<?php if ($_smarty_tpl->tpl_vars['currUser']->value) {?>
+
+
+
+<?php }?>
 
 
 </body>
