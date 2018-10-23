@@ -28,7 +28,7 @@ $(document).ready(function() {
   $("#makepost").click(function register() {
     var content = $("#content").val();
     var userFk = $("#metadata").data("userid");
-    alert(userFk);
+
     var data = {
       content: content,
       user_fk: userFk
