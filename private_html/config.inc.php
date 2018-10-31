@@ -58,7 +58,7 @@ $smarty -> assign('WEB_URL', WEB_URL);
 $smarty -> error_reporting = E_ERROR;
 require_once "dbconfig.inc.php";
 
-require_once WEB_PATH."class\Class_Post.php";
-require_once WEB_PATH."\class\Class_User.php";
+require_once WEB_PATH."class".DIRECTORY_SEPARATOR."Class_Post.php";
+require_once WEB_PATH."".DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."Class_User.php";
 
-require_once WEB_PATH."functions/functions.php";
+require_once WEB_PATH."functions".DIRECTORY_SEPARATOR."functions.php";

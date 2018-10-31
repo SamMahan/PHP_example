@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{$WEB_URL}css/style.css" />
     {if $currUser}
 <div id = "metadata" data-userid ="{$currUser->user_id}" data-name="{$currUser->name}"> </div>
-{/if}
+    {/if}
 </head>
 <body>
 <nav class="navbar navbar-inverse">

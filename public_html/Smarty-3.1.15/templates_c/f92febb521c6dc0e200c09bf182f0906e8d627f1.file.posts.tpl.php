@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2018-10-23 16:34:21
+<?php /* Smarty version Smarty-3.1.15, created on 2018-10-25 22:16:08
          compiled from "C:\MAMP\htdocs\PHP_example\public_html\templates\posts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8603258395bcbf1a2e54280-42882093%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f92febb521c6dc0e200c09bf182f0906e8d627f1' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\PHP_example\\public_html\\templates\\posts.tpl',
-      1 => 1540326858,
+      1 => 1540335272,
       2 => 'file',
     ),
   ),
@@ -43,7 +43,7 @@ css/style.css" />
 <div id = "metadata" data-userid ="<?php echo $_smarty_tpl->tpl_vars['currUser']->value->user_id;?>
 " data-name="<?php echo $_smarty_tpl->tpl_vars['currUser']->value->name;?>
 "> </div>
-<?php }?>
+    <?php }?>
 </head>
 <body>
 <nav class="navbar navbar-inverse">

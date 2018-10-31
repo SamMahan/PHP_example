@@ -5,7 +5,7 @@
    ------------------------------------------------------------------------------- */
 #
 # Set database constants
-define('DB_USER', 'root');
+define('DB_USER', 'newuser');
 define('DB_PASSWORD', 'root');
 define('DB_NAME', 'samplepost');
 #
@@ -23,7 +23,7 @@ try {
      *     "mysql:dbname=name;host=localhost"
      *     where "name" is the name of the database
      */
-    $dsn = "mysql:" . "dbname=" . DB_NAME . ";" . "host=localhost";
+    $dsn = "mysql:" . "dbname=" . DB_NAME . ";" . "host=35.202.96.106";
     $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 } catch (PDOException $e) {
